@@ -1,0 +1,328 @@
+<style>.kbc{
+    width: 100%;
+    height: 0%;
+    z-index: -1;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #E31E24;
+    transition: 1;
+}
+</style>
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Start Subheader -->
+<div class="sub-header p-relative" style="background-image: url('../../../assets/images/services/apply now.jpg');">
+            <div class="overlay overlay-bg-black"></div>
+            <div class="pattern"></div>
+            <div class="section-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="sub-header-content p-relative">
+                                <h1 class="text-custom-white lh-default fw-600">Apply Now</h1>
+                                <!-- <ul class="custom">
+                                    <li> <a routerLink="/" class="text-custom-white">Home</a>
+                                    </li>
+                                    <li class="text-custom-white active">Contact Us</li>
+                                </ul> -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- End Subheader -->
+        <!-- Start Contact -->
+        <style>
+            .text-left{
+                color:black!important; 
+            }
+        </style>
+        <section class="section-padding bg-gray contact-us">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 mb-md-80">
+                        <div class="contact-form full-height align-self-center bx-wrapper bg-custom-white">
+                            <h4 class="text-custom-black fw-600" style="color:#ec0d14">Basic Information</h4>
+                            <!-- <p class="text-light-white no-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p> -->
+                            <form class="form-layout-1" [formGroup]="form" (submit)="sendEmail($event)">
+                                
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6 mb-xl-20">
+                                        <div class="form-group">
+                                            <label class="text-left">Business Name:</label>
+                                            <input class="form-control" formControlName="business_name" type="text" name="business_name">
+                                        </div>
+                                        <!-- <div *ngIf="form.controls['b_name'].invalid && (form.controls['b_name'].dirty || form.controls['b_name'].touched)" class="alert alert-danger">
+                                            <div *ngIf="form.controls['b_name'].errors.required">
+                                              Business-Name is required.
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 mb-xl-20">
+                                        <div class="form-group">
+                                            <label class="text-left">Loan Amount</label>
+                                            <input required formControlName="loan_amount"  type="text" name="loan_amount" class="form-control" >
+                                          </div>
+                                          <div *ngIf="form.controls['loan_amount'].invalid && (form.controls['loan_amount'].dirty || form.controls['loan_amount'].touched)" class="alert alert-danger">
+                                              <div *ngIf="form.controls['loan_amount'].errors.required">
+                                                Loan Amount is required.
+                                              </div>
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6 mb-xl-20">
+                                        <div class="form-group">
+                                            <label class="text-left">First Name</label>
+                                            <input  required formControlName="f_name"  type="text" name="f_name" class="form-control">
+                                        </div>
+                                        <div *ngIf="form.controls['f_name'].invalid && (form.controls['f_name'].dirty || form.controls['f_name'].touched)" class="alert alert-danger">
+                                          <div *ngIf="form.controls['f_name'].errors.required">
+                                            First Name is required.
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 mb-xl-20">
+                                        <div class="form-group">
+                                            <label class="text-left">Last Name</label>
+                                            <input required formControlName="l_name" type="text" name="l_name" class="form-control"  required>
+                                        </div>
+                                        <div *ngIf="form.controls['l_name'].invalid && (form.controls['l_name'].dirty || form.controls['l_name'].touched)" class="alert alert-danger">
+                                          <div *ngIf="form.controls['l_name'].errors.required">  
+                                            Last Name is required.
+                                          </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 mb-xl-20">
+                                        <div class="form-group">
+                                            <label class="text-left">Mobile No.</label>
+                                            <input required formControlName="mob_no" type="text" name="mobno" class="form-control"  required>
+                                        </div>
+                                        <div *ngIf="form.controls['mob_no'].invalid && (form.controls['mob_no'].dirty || form.controls['mob_no'].touched)" class="alert alert-danger">
+                                            <div *ngIf="form.controls['mob_no'].errors.required">
+                                                Mobile No is required.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 mb-xl-20">
+                                        <div class="form-group">
+                                            <label class="text-left">email</label>
+                                            <input class="form-control" name="email" formControlName="email" type="email">
+                                        </div>
+                                        <div *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)" class="alert alert-danger">
+                                            <div *ngIf="form.controls['email'].errors.required">
+                                              email is required.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 mb-xl-20">
+                                        <div class="form-group">
+                                            <label class="text-left">City</label>
+                                            <input required formControlName="city" type="text" name="city" class="form-control" >
+                                        </div>
+                                        <div *ngIf="form.controls['city'].invalid && (form.controls['city'].dirty || form.controls['city'].touched)" class="alert alert-danger">
+                                          <div *ngIf="form.controls['city'].errors.required">
+                                            City is required.
+                                          </div>
+                                        </div>
+                                    </div>
+                                     <div class="col-md-6 col-sm-12 mb-xl-20">
+                                        <div class="form-group">
+                                            <label class="text-left">Primary Loan Purpose</label>
+                                            <select class="form-control" formControlName="primary_dd" name="p_loan_purpose">
+                                                <option>--</option>
+                                                <option>Purchase Home From Builder</option>
+                                                <option>Purchase Home From Reseller</option>
+                                                <option>Purchase Commercial Property</option>
+                                                <option>Purchase Industrial Property</option>
+                                                <option>Purchase Machinery</option>
+                                                <option>Business Expansion</option>
+                                                <option>Other Use</option>
+                                              </select>
+                                        </div>
+                                        <div *ngIf="form.controls['primary_dd'].invalid && (form.controls['primary_dd'].dirty || form.controls['primary_dd'].touched)" class="alert alert-danger">
+                                            <div *ngIf="form.controls['primary_dd'].errors.required">
+                                              dropdown is required.
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                   
+                                   
+                                    <div class="col-12">
+                                    <h4 class="text-custom-black fw-600 mt-4" style="color:#ec0d14">Income Details</h4><br>
+                                </div>
+                                    <!-- <div class="col-md-6 col-sm-12 mb-xl-20">
+                                        <div class="form-group">
+                                            <label class="text-left">Type Of Income</label>
+                                            <select class="form-control" formControlName="income_dd" name="type_of_income">
+                                                <option>--</option>
+                                                <option>Salaried</option>
+                                                <option>Business</option>
+                                                <option>Rental</option>
+                                                <option>Other</option>
+                                              </select>
+                                        </div>
+                                        <div *ngIf="form.controls['income_dd'].invalid && (form.controls['income_dd'].dirty || form.controls['income_dd'].touched)" class="alert alert-danger">
+                                            <div *ngIf="form.controls['income_dd'].errors.required">
+                                              dropdown is required.
+                                            </div>
+                                        </div>
+                                    </div><br> -->
+                                    <div class="col-md-6 col-sm-12 mb-xl-20">
+                                        <div class="form-group">
+                                            <label class="text-left">Type of Income</label>
+                                            <select class="form-control" formControlName="income_dd" name="type_of_income">
+                                                <option>-- </option>
+                                                <option>Salaried</option>
+                                                <option>Business</option>
+                                                <option>Rental</option>
+                                                <option>Other</option>
+                                               
+                                            </select>
+                                        </div>
+                                        <div *ngIf="form.controls['income_dd'].invalid && (form.controls['income_dd'].dirty || form.controls['income_dd'].touched)" class="alert alert-danger">
+                                            <div *ngIf="form.controls['income_dd'].errors.required">
+                                              dropdown is required.
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                    
+                                    <div class="col-md-6 col-sm-12 mb-xl-20">
+                                        <div class="form-group">
+                                            <label class="text-left">Income per Year (As per IT Return)</label>
+                                            <select class="form-control" formControlName="itreturn_dd" name="income_per_year">
+                                                <option>-- </option>
+                                                <option>Less than 5 Lakh</option>
+                                                <option>5 Lakh to 10 Lakh</option>
+                                                <option>10 Lakh to 25 Lakh</option>
+                                                <option>More than 25 Lakh</option>
+                                               
+                                            </select>
+                                        </div>
+                                        <div *ngIf="form.controls['itreturn_dd'].invalid && (form.controls['itreturn_dd'].dirty || form.controls['itreturn_dd'].touched)" class="alert alert-danger">
+                                            <div *ngIf="form.controls['itreturn_dd'].errors.required">
+                                              dropdown is required.
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                    <div class="col-md-6 col-sm-12 mb-xl-20">     
+                                        <div class="form-group">
+                                            <label class="text-left">Existing Loans</label>
+                                            <select class="form-control" formControlName="exloan_dd" name="e_loan">
+                                                
+                                                <option>-- </option>
+                                                <option>Home Loan </option>
+                                                <option>Mortgage Loan</option>
+                                                <option>Personal Loan</option>
+                                                <option>Business Loan</option>
+                                                <option>Machinery Loan</option>
+                                                <option>Working Capital</option>
+                                                <option>Other</option>
+                                                
+                                            </select>
+                                        </div>
+                                        <div *ngIf="form.controls['exloan_dd'].invalid && (form.controls['exloan_dd'].dirty || form.controls['exloan_dd'].touched)" class="alert alert-danger">
+                                            <div *ngIf="form.controls['exloan_dd'].errors.required">
+                                              dropdown is required.
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                    
+                                    <div class="col-12 mb-xl-20 ml-4">
+                                        <div class="form-group">
+                                            <input required  type="checkbox" class="custom-control-input" id="defaultContactFormCopy2" >
+                                            <label class="custom-control-label pt-1 text-dark" for="defaultContactFormCopy2">i am citizen of india.</label>
+                                        </div>
+                                        <!-- <div *ngIf="form.controls['check_1'].invalid && (form.controls['check_1'].dirty || form.controls['check_1'].touched)" class="alert alert-danger">
+                                            <div *ngIf="form.controls['check_1'].errors.required">
+                                              checkBox is required.
+                                            </div>
+                                        </div> -->
+                                    </div><br>
+                                    <div class="col-12 mb-xl-20 ml-4">
+                                        <div class="form-group">
+                                            <input formControlName="check_2" type="checkbox" class="custom-control-input" id="defaultContactFormCopy1">
+                                            <label class="custom-control-label pt-1 text-dark" for="defaultContactFormCopy1">I agree to receive loan related information to any email address provided by me.</label>
+                                        </div>
+                                        <div *ngIf="form.controls['check_2'].invalid && (form.controls['check_2'].dirty || form.controls['check_2'].touched)" class="alert alert-danger">
+                                            <div *ngIf="form.controls['check_2'].errors.required">
+                                            checkBox is required.
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                    <div class="col-12 mb-xl-20 ml-4">
+                                        <div class="form-group">
+                                            <input formControlName="check_3" type="checkbox" class="custom-control-input" id="defaultContactFormCopy3">
+                                            <label class="custom-control-label pt-1 text-dark" for="defaultContactFormCopy3">I agree that clicking submit button below, that I am giving Alexus Capital Mangagement, written instruction to obtain my personal and business information to evaluate my eligibility. I also authorize representative of Alexus Capital Management to call me on my contact number.</label>
+                                        </div>
+                                        <div *ngIf="form.controls['check_3'].invalid && (form.controls['check_3'].dirty || form.controls['check_3'].touched)" class="alert alert-danger">
+                                          <div *ngIf="form.controls['check_3'].errors.required">
+                                            checkBox is required.
+                                          </div>
+                                        </div>
+                                    </div><br>
+                                    <div class="col-md-4 mt-4" style="background-color: #ec0d14; color:white!important;">
+                                     <button type="submit"
+                                     [disabled]="form.pristine || form.invalid" class="btn btn-block" style="color:white;">
+                                     Submit
+                                 </button>
+                                </div>
+                                 
+                                    <!-- <div class="col-md-4 mt-4" style="background-color: #ec0d14; color:white;"> -->
+                                     </div>
+                                    <!-- </div> -->
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+        <!-- End Contact -->
+        <!-- Start Contact Bottom -->
+        <!-- <section class="section-padding bg-gray contact-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="contact-info bx-wrapper bg-custom-white text-center mb-md-40">
+                            <div class="contact-info-wrapper">
+                                <div class="icon mb-xl-20"> <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <h5 class="text-custom-black fw-600">Phone</h5>
+                                <p class="text-light-white">Start working with LOANLY that can provide everything</p> <a routerLink="/contactus" class="fs-14">+(347)123 456 7890</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="contact-info bx-wrapper bg-custom-white text-center mb-md-40">
+                            <div class="contact-info-wrapper">
+                                <div class="icon mb-xl-20"> <i class="far fa-envelope"></i>
+                                </div>
+                                <h5 class="text-custom-black fw-600">Email</h5>
+                                <p class="text-light-white">Start working with LOANLY that can provide everything</p> <a routerLink="/contactus" class="fs-14">contact@example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="contact-info bx-wrapper bg-custom-white text-center">
+                            <div class="contact-info-wrapper">
+                                <div class="icon mb-xl-20"> <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h5 class="text-custom-black fw-600">Location</h5>
+                                <p class="text-light-white">Start working with LOANLY that can provide everything</p> <a routerLink="/contactus" class="fs-14">View on Google map</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- End Contact Bottom -->
+        
